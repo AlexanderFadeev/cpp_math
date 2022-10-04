@@ -37,6 +37,18 @@ public:
         return sum;
     }
 
+    constexpr Vec operator-(Vec const& other) const {
+        return *this + (-other);
+    }
+
+    constexpr Vec operator*(T const& other) const {
+        auto product = *this;
+        for (size_t idx = 0; idx < N; idx++) {
+            product._data[idx] *= other;
+        }
+        return product;
+    }
+
 private:
     std::array<T, N> _data;
 };

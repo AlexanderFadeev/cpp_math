@@ -34,3 +34,20 @@ constexpr void testVecSum() {
     static_assert(sum[1] == 22);
     static_assert(sum[2] == 33);
 }
+
+constexpr void testVecSub() {
+    constexpr V v1(10, 20, 30);
+    constexpr V v2(1, 2, 3);
+    constexpr V dif = v1 - v2;
+    static_assert(dif[0] == 9);
+    static_assert(dif[1] == 18);
+    static_assert(dif[2] == 27);
+}
+
+constexpr void testVecMulScalar() {
+    constexpr V v(1, 2, 3);
+    constexpr V product = v * 10;
+    static_assert(product[0] == 10);
+    static_assert(product[1] == 20);
+    static_assert(product[2] == 30);
+}

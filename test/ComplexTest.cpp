@@ -73,3 +73,18 @@ constexpr void testComplexMulScalar() {
     static_assert(product.re() == 15);
     static_assert(product.im() == 30);
 }
+
+constexpr void testComplexDivScalar() {
+    constexpr Z z(15, 30);
+    constexpr Z product = z / 3;
+    static_assert(product.re() == 5);
+    static_assert(product.im() == 10);
+}
+
+constexpr void testComplexDiv() {
+    constexpr Z z1(2, 4);
+    constexpr Z z2(1, 1);
+    constexpr Z quo = z1 / z2;
+    static_assert(quo.re() == 3);
+    static_assert(quo.im() == 1);
+}

@@ -28,6 +28,10 @@ public:
         return _im;
     }
 
+    constexpr Complex conjugate() const {
+        return Complex(_re, -_im);
+    }
+
     constexpr Complex operator-() const {
         return Complex(-_re, -_im);
     }
@@ -44,10 +48,17 @@ public:
         return Complex(_re * other._re - _im * other._im, _re * other._im + other._re * _im);
     }
 
+    constexpr Complex operator/(T const& other) const {
+        return Complex(_re / other, _im / other);
+    }
+
+    constexpr Complex operator/(Complex const& other) const {
+        return (*this) * other.conjugate() / (other._re * other._re + other._im * other._im);
+    }
+
 private:
     T _re;
     T _im;
-
 };
 
 }

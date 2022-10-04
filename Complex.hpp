@@ -10,6 +10,16 @@ public:
         , _im()
     {}
 
+    constexpr Complex(T const& re)
+        : _re(re)
+        , _im()
+    {}
+
+    constexpr Complex(T const& re, T const& im)
+        : _re(re)
+        , _im(im)
+    {}
+
     constexpr T re() const {
         return _re;
     }

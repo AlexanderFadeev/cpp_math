@@ -17,3 +17,12 @@ constexpr void testVecConstructor() {
     static_assert(vec[1] == 2);
     static_assert(vec[2] == 3);
 }
+
+constexpr void testVecSum() {
+    constexpr V v1(1, 2, 3);
+    constexpr V v2(10, 20, 30);
+    constexpr V sum = v1 + v2;
+    static_assert(sum[0] == 11);
+    static_assert(sum[1] == 22);
+    static_assert(sum[2] == 33);
+}

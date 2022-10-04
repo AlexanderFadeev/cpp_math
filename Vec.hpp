@@ -12,6 +12,11 @@ public:
         : _data()
     {}
 
+    template <typename ...Args>
+    constexpr Vec(Args const& ...args)
+        : _data({args...})
+    {}
+
     constexpr T operator[](size_t index) const {
         return _data[index];
     }

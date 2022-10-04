@@ -3,7 +3,10 @@
 This is an utility library which can help with algebraic tasks.
 
 ## Features:
-* constexpr support
+
+|       | constexpr |
+|-------|-----------|
+|Complex| Yes       |
 
 
 ## TODO:  
@@ -11,6 +14,5 @@ This is an utility library which can help with algebraic tasks.
 * Wrappers  
     * Unsigned to Signed
     * Signed to Rational
-* Complex Numbers
 * 2D Matrices
-* Vec<<N>>
+* Vec&lt;N&gt;

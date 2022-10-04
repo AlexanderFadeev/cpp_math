@@ -58,3 +58,18 @@ constexpr void testComplexSubScalar() {
     static_assert(sum.re() == 2);
     static_assert(sum.im() == 10);
 }
+
+constexpr void testComplexMul() {
+    constexpr Z z1(5, 10);
+    constexpr Z z2(3, 4);
+    constexpr Z product = z1 * z2;
+    static_assert(product.re() == -25);
+    static_assert(product.im() == 50);
+}
+
+constexpr void testComplexMulScalar() {
+    constexpr Z z(5, 10);
+    constexpr Z product = z * 3;
+    static_assert(product.re() == 15);
+    static_assert(product.im() == 30);
+}

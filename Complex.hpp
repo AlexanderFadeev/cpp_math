@@ -40,6 +40,10 @@ public:
         return *this + (-other);
     }
 
+    constexpr Complex operator*(Complex const& other) const {
+        return Complex(_re * other._re - _im * other._im, _re * other._im + other._re * _im);
+    }
+
 private:
     T _re;
     T _im;

@@ -88,3 +88,10 @@ constexpr void testComplexDiv() {
     static_assert(quo.re() == 3);
     static_assert(quo.im() == 1);
 }
+
+constexpr void testConjugate() {
+    constexpr Z z(15, 30);
+    constexpr Z conjugate = !z;
+    static_assert(conjugate.re() == 15);
+    static_assert(conjugate.im() == -30);
+}

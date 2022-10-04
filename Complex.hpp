@@ -28,7 +28,7 @@ public:
         return _im;
     }
 
-    constexpr Complex conjugate() const {
+    constexpr Complex operator!() const {
         return Complex(_re, -_im);
     }
 
@@ -53,7 +53,7 @@ public:
     }
 
     constexpr Complex operator/(Complex const& other) const {
-        return (*this) * other.conjugate() / (other._re * other._re + other._im * other._im);
+        return (*this) * !other / (other * !other).re();
     }
 
 private:

@@ -28,6 +28,18 @@ public:
         return _im;
     }
 
+    constexpr Complex operator-() const {
+        return Complex(-_re, -_im);
+    }
+
+    constexpr Complex operator+(Complex const& other) const {
+        return Complex(_re + other._re, _im + other._im);
+    }
+
+    constexpr Complex operator-(Complex const& other) const {
+        return *this + (-other);
+    }
+
 private:
     T _re;
     T _im;

@@ -18,6 +18,14 @@ constexpr void testVecConstructor() {
     static_assert(vec[2] == 3);
 }
 
+constexpr void testVecNegate() {
+    constexpr V v(1, 2, 3);
+    constexpr V n = -v;
+    static_assert(n[0] == -1);
+    static_assert(n[1] == -2);
+    static_assert(n[2] == -3);
+}
+
 constexpr void testVecSum() {
     constexpr V v1(1, 2, 3);
     constexpr V v2(10, 20, 30);

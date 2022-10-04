@@ -21,6 +21,14 @@ public:
         return _data[index];
     }
 
+    constexpr Vec operator-() const {
+        auto neg = *this;
+        for (size_t idx = 0; idx < N; idx++) {
+            neg._data[idx] = -neg._data[idx];
+        }
+        return neg;
+    }
+
     constexpr Vec operator+(Vec const& other) const {
         auto sum = *this;
         for (size_t idx = 0; idx < N; idx++) {

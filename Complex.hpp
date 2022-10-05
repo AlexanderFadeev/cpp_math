@@ -20,6 +20,9 @@ public:
         , _im(im)
     {}
 
+    constexpr bool operator==(Complex const&) const = default;
+    constexpr bool operator!=(Complex const&) const = default;
+
     constexpr T re() const {
         return _re;
     }

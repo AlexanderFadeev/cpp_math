@@ -7,6 +7,7 @@ This is an utility library which can help with algebraic tasks.
 |       | constexpr |
 |-------|-----------|
 |Complex| Yes       |
+|Vec    | Yes       |
 
 
 ## TODO:  
@@ -15,4 +16,3 @@ This is an utility library which can help with algebraic tasks.
     * Unsigned to Signed
     * Signed to Rational
 * 2D Matrices
-* Vec&lt;N&gt;

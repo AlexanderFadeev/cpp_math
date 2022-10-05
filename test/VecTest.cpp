@@ -18,36 +18,36 @@ constexpr void testVecConstructor() {
     static_assert(vec[2] == 3);
 }
 
+constexpr void testVecEqual() {
+    constexpr V vec(1, 2, 3);
+    static_assert(vec == V(1, 2, 3));
+    static_assert(vec != V(5, 2, 3));
+    static_assert(vec != V(1, 5, 3));
+    static_assert(vec != V(1, 2, 5));
+}
+
 constexpr void testVecNegate() {
     constexpr V v(1, 2, 3);
     constexpr V n = -v;
-    static_assert(n[0] == -1);
-    static_assert(n[1] == -2);
-    static_assert(n[2] == -3);
+    static_assert(n == V(-1, -2, -3));
 }
 
 constexpr void testVecSum() {
     constexpr V v1(1, 2, 3);
     constexpr V v2(10, 20, 30);
     constexpr V sum = v1 + v2;
-    static_assert(sum[0] == 11);
-    static_assert(sum[1] == 22);
-    static_assert(sum[2] == 33);
+    static_assert(sum == V(11, 22, 33));
 }
 
 constexpr void testVecSub() {
     constexpr V v1(10, 20, 30);
     constexpr V v2(1, 2, 3);
     constexpr V dif = v1 - v2;
-    static_assert(dif[0] == 9);
-    static_assert(dif[1] == 18);
-    static_assert(dif[2] == 27);
+    static_assert(dif == V(9, 18, 27));
 }
 
 constexpr void testVecMulScalar() {
     constexpr V v(1, 2, 3);
     constexpr V product = v * 10;
-    static_assert(product[0] == 10);
-    static_assert(product[1] == 20);
-    static_assert(product[2] == 30);
+    static_assert(product == V(10, 20, 30));
 }

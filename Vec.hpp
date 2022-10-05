@@ -21,6 +21,9 @@ public:
         return _data[index];
     }
 
+    constexpr bool operator==(Vec const&) const = default;
+    constexpr bool operator!=(Vec const&) const = default;
+
     constexpr Vec operator-() const {
         auto neg = *this;
         for (size_t idx = 0; idx < N; idx++) {

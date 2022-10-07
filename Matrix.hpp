@@ -17,6 +17,18 @@ public:
     constexpr bool operator==(Matrix const& other) const = default;
     constexpr bool operator!=(Matrix const& other) const = default;
 
+    constexpr Matrix operator+(Matrix const& other) const {
+        auto sum = *this;
+
+        for (size_t i = 0; i < M; i++) {
+            for (size_t j = 0; j < N; j++) {
+                sum._data[i][j] += other._data[i][j];
+            }
+        }
+
+        return sum;
+    }
+
 private:
     std::array<std::array<T, N>, M> _data;
 };

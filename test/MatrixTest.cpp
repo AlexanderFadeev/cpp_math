@@ -51,3 +51,23 @@ constexpr void testMatrixEquality() {
     static_assert(mat1 == mat1);
     static_assert(mat1 != mat2);
 }
+
+constexpr void testMatrixSum() {
+    constexpr auto mat1 = Mat({{
+        {{1, 2, 3}},
+        {{4, 5, 6}},
+        {{7, 8, 9}}
+    }});
+    constexpr auto mat2 = Mat({{
+        {{9, 8, 7}},
+        {{6, 5, 4}},
+        {{3, 2, 1}}
+    }});
+
+    constexpr auto sum = mat1 + mat2;
+    static_assert(sum == Mat({{
+        {{10, 10, 10}},
+        {{10, 10, 10}},
+        {{10, 10, 10}},
+    }}));
+}

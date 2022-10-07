@@ -14,6 +14,9 @@ public:
         return _data[rowIdx];
     }
 
+    constexpr bool operator==(Matrix const& other) const = default;
+    constexpr bool operator!=(Matrix const& other) const = default;
+
 private:
     std::array<std::array<T, N>, M> _data;
 };

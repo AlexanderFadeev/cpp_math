@@ -35,3 +35,19 @@ constexpr bool testMatrixConstructor() {
     return true;
 }
 static_assert(testMatrixConstructor());
+
+constexpr void testMatrixEquality() {
+    constexpr auto mat1 = Mat({{
+        {{1, 2, 3}},
+        {{4, 5, 6}},
+        {{7, 8, 9}}
+    }});
+    constexpr auto mat2 = Mat({{
+        {{9, 8, 7}},
+        {{6, 5, 4}},
+        {{3, 2, 1}}
+    }});
+
+    static_assert(mat1 == mat1);
+    static_assert(mat1 != mat2);
+}

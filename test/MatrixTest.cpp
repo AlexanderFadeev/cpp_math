@@ -52,6 +52,21 @@ constexpr void testMatrixEquality() {
     static_assert(mat1 != mat2);
 }
 
+constexpr void testMatrixNegate() {
+    constexpr auto mat = Mat({{
+        {{1, 2, 3}},
+        {{4, 5, 6}},
+        {{7, 8, 9}}
+    }});
+
+    constexpr auto neg = -mat;
+    static_assert(neg == Mat({{
+        {{-1, -2, -3}},
+        {{-4, -5, -6}},
+        {{-7, -8, -9}},
+    }}));
+}
+
 constexpr void testMatrixSum() {
     constexpr auto mat1 = Mat({{
         {{1, 2, 3}},

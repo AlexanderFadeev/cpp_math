@@ -17,6 +17,18 @@ public:
     constexpr bool operator==(Matrix const& other) const = default;
     constexpr bool operator!=(Matrix const& other) const = default;
 
+    constexpr Matrix operator-() const {
+        Matrix neg;
+
+        for (size_t i = 0; i < M; i++) {
+            for (size_t j = 0; j < N; j++) {
+                neg._data[i][j] = -_data[i][j];
+            }
+        }
+
+        return neg;
+    }
+
     constexpr Matrix operator+(Matrix const& other) const {
         auto sum = *this;
 

@@ -1,11 +1,11 @@
 
 ComplexTest:
-	g++ ./test/ComplexTest.cpp --std=c++2b -c -o build/ComplexTest.o
+	g++ ./src/test/ComplexTest.cpp --std=c++2b -c -o build/ComplexTest.o
 
 VecTest:
-	g++ ./test/VecTest.cpp --std=c++2b -c -o build/VecTest.o
+	g++ ./src/test/VecTest.cpp --std=c++2b -c -o build/VecTest.o
 
 MatrixTest:
-	g++ ./test/MatrixTest.cpp --std=c++2b -c -o build/MatrixTest.o
+	g++ ./src/test/MatrixTest.cpp --std=c++2b -c -o build/MatrixTest.o
 
 test: ComplexTest VecTest MatrixTest

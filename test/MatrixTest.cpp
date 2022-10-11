@@ -2,7 +2,10 @@
 
 constexpr size_t M = 3;
 constexpr size_t N = 3;
+constexpr size_t K = 1;
 using Mat = Matrix<int, M, N>;
+using MatNK = Matrix<int, N, K>;
+using MatMK = Matrix<int, M, K>;
 
 constexpr bool testMatrixZeroConstructor() {
     constexpr auto mat = Mat();
@@ -104,5 +107,25 @@ constexpr void testMatrixSub() {
         {{-8, -6, -4}},
         {{-2,  0,  2}},
         {{4,   6,  8}},
+    }}));
+}
+
+constexpr void testMatrixMul() {
+    constexpr auto mat1 = Mat({{
+        {{1, 2, 3}},
+        {{4, 5, 6}},
+        {{7, 8, 9}}
+    }});
+    constexpr auto mat2 = MatNK({{
+        {{1}},
+        {{2}},
+        {{3}}
+    }});
+
+    constexpr auto product = mat1 * mat2;
+    static_assert(product == MatMK({{
+        {{14}},
+        {{32}},
+        {{50}},
     }}));
 }

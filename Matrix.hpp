@@ -41,6 +41,10 @@ public:
         return sum;
     }
 
+    constexpr Matrix operator-(Matrix const& other) const {
+        return (*this) + (-other);
+    }
+
 private:
     std::array<std::array<T, N>, M> _data;
 };

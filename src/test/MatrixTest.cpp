@@ -1,5 +1,7 @@
 #include "../Matrix.hpp"
 
+using namespace cpp_math;
+
 constexpr size_t M = 3;
 constexpr size_t N = 3;
 constexpr size_t K = 1;

@@ -1,6 +1,8 @@
 #include <array>
 #include <cstddef>
 
+namespace cpp_math {
+
 template <typename T, size_t M, size_t N>
 class Matrix {
 public:
@@ -68,3 +70,5 @@ private:
     template <typename TT, size_t MM, size_t NN>
     friend class Matrix;
 };
+
+}

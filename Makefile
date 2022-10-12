@@ -8,4 +8,7 @@ VecTest:
 MatrixTest:
 	g++ ./src/test/MatrixTest.cpp --std=c++2b -c -o build/MatrixTest.o
 
-test: ComplexTest VecTest MatrixTest
+MathTest:
+	g++ ./src/test/MathTest.cpp --std=c++2b -c -o build/MathTest.o
+
+test: ComplexTest VecTest MatrixTest MathTest
